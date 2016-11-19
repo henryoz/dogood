@@ -1,8 +1,34 @@
 <template>
-  <div id="app">
+  <div class="container-fluid" id="app">
+    To get started, choose a location
+    <ul>
+      <li v-for="city in cities">
+          <router-link :to="{ name: `city`, params: {location: city.name} }">{{city.name | capitalize}}</router-link>
+      </li>
+    </ul>
+
     <router-view></router-view>
   </div>
 </template>
+
+<script>
+export default {
+  data () {
+    return {}
+  },
+  computed: {
+    cities() {
+      return this.$store.state.cities
+    }
+  },
+  ready () {},
+  attached () {},
+  methods: {},
+  components: {}
+}
+</script>
+
+
 
 <style>
 body {
@@ -14,13 +40,5 @@ body {
                Ubuntu,
                'segoe ui', arial,
                sans-serif;
-}
-.page {
-  text-align: center;
-}
-code {
-  background-color: #f0f0f0;
-  padding: 3px 5px;
-  border-radius: 2px;
 }
 </style>

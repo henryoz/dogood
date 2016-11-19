@@ -1,25 +1,21 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import Bristol from '../cities/bristol'
+import Cardiff from '../cities/cardiff'
+
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  cities: [
+    Bristol,
+    Cardiff,
+  ],
 }
 
-const mutations = {
-  INCREMENT(state) {
-    state.count++
-  }
-}
+const mutations = {}
 
-const actions = {
-  incrementAsync({commit}) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
-  }
-}
+const actions = {}
 
 const store = new Vuex.Store({
   state,
