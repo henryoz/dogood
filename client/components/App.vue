@@ -2,12 +2,15 @@
   <div class="container-fluid" id="app">
     To get started, choose a location
     <ul>
+      <router-link :to="{ name: `home` }">Start Over</router-link>
       <li v-for="city in cities">
           <router-link :to="{ name: `city`, params: {location: city.name} }">{{city.name | capitalize}}</router-link>
       </li>
     </ul>
 
-    <router-view></router-view>
+    <transition name="slide-fade">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
@@ -40,5 +43,18 @@ body {
                Ubuntu,
                'segoe ui', arial,
                sans-serif;
+}
+.slide-fade-enter-active {
+  transition: all .6s ease;
+}
+.slide-fade-leave-active {
+  transition: all cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-leave-active {
+  transform: translateX(-100%);
+  /*opacity: 0;*/
+}
+.slide-fade-enter {
+  transform: translateX(100%);
 }
 </style>
