@@ -52,7 +52,6 @@ body {
 }
 .slide-fade-leave-active {
   transform: translateX(-100%);
-  /*opacity: 0;*/
 }
 .slide-fade-enter {
   transform: translateX(100%);
