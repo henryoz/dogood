@@ -8,12 +8,9 @@
       <h2>How do you want to help out?</h2>
     </div>
     <div v-for="item in city.items">
-      <h3>{{item.desc}}</h3>
-      <ul>
-        <li v-for="link in item.links">
-          <a v-bind:href="link.url" target="_blank">{{link.name}}</a>
-        </li>
-      </ul>
+      <router-link :to="{ name: 'topic', params: { city, topic: item.topic } }">{{ item.topic }}</router-link>
+      <!-- TODO: for each item topic, set up a new router link to go to the next level. Probably easiest to add a topic id and get to it that way -->
+      <!-- TODO: this will actually be EASIER to manage with a working back end and solid crud. Sigh. -->
     </div>
   </div>
 </template>

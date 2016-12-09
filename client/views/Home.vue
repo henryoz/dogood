@@ -1,17 +1,20 @@
 <template>
   <div class="page">
     <p>
-      To get started, edit files in <code>./client</code> and save.
+      Choose a city
     </p>
+    <li v-for="city in cities">
+        <router-link :to="{ name: `city`, params: {location: city.name} }">{{city.name | capitalize}}</router-link>
+    </li>
   </div>
 </template>
 
 <script>
-
-
 export default {
-  components: {
-
-  }
+  computed: {
+    cities() {
+      return this.$store.state.cities
+    }
+  },
 }
 </script>
