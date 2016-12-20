@@ -9,4 +9,4 @@ The site is divided into regions, each containing a range of links for local org
 You can add to *dogood* by submitting a pull request containing a new `{cityname}.js` file within the `client/cities` directory. We'll take care of the rest <3
 
 ##Run / Build
-If you want to fork this repo and play around, simply download the code and run npm install from the root directory. Then use npm run dev to build & serve up a development version or npm run build to build a production version. However, be aware that Dogood is currently very much a work in progress and is prone to major changes in the forseeable future.
+If you want to fork this repo and play around, simply download the code and run npm install from the root directory. Then use `npm run dev` to build & serve up a development version or `npm run build` to build a production version. However, be aware that *dogood* is currently very much a work in progress and is prone to major changes in the forseeable future.
